@@ -101,7 +101,7 @@ class IcecreamTests: XCTestCase {
     
     // 5.
     func testReplaceFlavorForJoe() {
-        let flavorIsChanged = testIcecream.replace(flavor: "Berry", forPerson: "Joe")
+        let flavorIsChanged = testIcecream.replace(flavor: "Berry", person: "Joe")
         XCTAssertTrue(flavorIsChanged, "This should have returned true, Joe's flavor should also have been updated.")
         
         let flavor = testIcecream.flavor(forPerson: "Joe")
@@ -109,7 +109,7 @@ class IcecreamTests: XCTestCase {
     }
     
     func testReplaceFlavorForNonExistentPerson() {
-        let flavorIsChanged = testIcecream.replace(flavor: "Strawberry", forPerson: "Jon Snow")
+        let flavorIsChanged = testIcecream.replace(flavor: "Strawberry", person: "Jon Snow")
         XCTAssertFalse(flavorIsChanged, "This should have returned false, Jon Snow doesn't exist.")
         
         let flavor = testIcecream.flavor(forPerson: "Jon Snow")
